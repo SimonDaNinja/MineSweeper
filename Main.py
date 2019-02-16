@@ -25,9 +25,6 @@ class MainClass:
 				self.InvalidResponseMessage()
 		self.Run()
 		
-	def InvalidResponseMessage(self):
-		print("Invalid response!")
-		
 	def Run(self):
 		sw = StopWatch()
 		playing = True
@@ -67,7 +64,10 @@ class MainClass:
 				else:
 					self.InvalidResponseMessage()
 		print("Good bye!")
-			
+	
+	def InvalidResponseMessage(self):
+		print("Invalid response!")
+	
 	def CompareToHighScore(self,roundTime):
 		bestTimeBeaten = False
 		if not os.path.isdir(highScoreDirectory):
