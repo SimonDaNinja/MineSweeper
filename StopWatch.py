@@ -37,3 +37,10 @@ class StopWatch:
 			average = sum(self.intervals)/len(self.intervals)
 			self.Start()
 		return average
+		
+if __name__ == "__main__":
+	sw = StopWatch()
+	sw.Start()
+	time.sleep(5)
+	t = sw.Stop()
+	print("Time passed is " + str(t))
