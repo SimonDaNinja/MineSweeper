@@ -15,7 +15,7 @@ you have to modify the functions "clear()" and "CompareToHighScore()" in Main.py
 You can also just remove them and the places they're used in.
 If you remove "CompareToHighScore()", you lose the highscore functionality.
 If you remove "clear", the screen won't be cleared between moves, making for 
-a less seemless playing experience. But the basic functionality should still
+a less seamless playing experience. But the basic functionality should still
 work.
 
 This program uses the following libraries:
