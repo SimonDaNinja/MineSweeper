@@ -6,7 +6,7 @@ Tiles are revealed by typing in row and column numbers (as prompted -
 it's quite self-explanatory when playing.)
 
 This program uses windows system functions to:
-1. clear the screen.
+1. clear the command window.
 2. check for existence of directories and paths.
 3. create directories.
 
