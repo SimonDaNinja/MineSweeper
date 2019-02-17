@@ -10,7 +10,7 @@ This program uses windows system functions to:
 2. check for existence of directories and paths.
 3. create directories.
 
-Hence,If you want to run the code on a non-windows system,
+Hence, if you want to run the code on a non-windows system,
 you have to modify the functions "clear()" and "CompareToHighScore()" in Main.py.
 You can also just remove them and the places they're used in.
 If you remove "CompareToHighScore()", you lose the highscore functionality.
