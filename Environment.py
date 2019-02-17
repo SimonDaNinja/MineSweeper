@@ -3,7 +3,8 @@ import copy
 
 fullBlock = chr(9608)*2
 emptyBlock = chr(9617)*2
-mineSymbol = chr(9604)
+mineSymbol = chr(9632)
+explosionSymbol = "x"
 gap = "  "
 
 class Environment:
@@ -18,6 +19,7 @@ class Environment:
 		self.maxScore				= width*height-numberOfMines
 		self.graphicalCellWidth		= max(len(str(width))+1,2)
 		self.graphicalLeftMargin	= max(len(str(height))+2,3)
+		self.explosion 				= -2
 		
 		self.GenerateMap((0,0))
 		self.GenerateUserMap()
@@ -59,6 +61,7 @@ class Environment:
 		x = position[0]
 		y = position[1]
 		if self.map[x][y]==self.mine:
+			self.map[x][y] = self.explosion
 			return False
 		if not self.userMap[x][y]:
 			self.userMap[x][y] = True
@@ -162,6 +165,8 @@ class Environment:
 					rowString += self.GenerateCellString(emptyBlock) + gap
 				elif cell == self.mine:
 					rowString += self.GenerateCellString(mineSymbol) + gap
+				elif cell == self.explosion:
+					rowString += self.GenerateCellString(explosionSymbol) + gap
 				else:
 					rowString += self.GenerateCellString(str(cell)) + gap
 			else:
