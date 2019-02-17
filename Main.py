@@ -87,7 +87,9 @@ class MainClass:
 		
 		
 	def GetHighScoreFilePath(self):
-		filePath = highScoreDirectory + "\\" + "h" + str(self.height) + "w" + str(self.width) + "m" + str(self.numberOfMines) + "highScore.npy"
+		dims = [self.height,self.width]
+		dims.sort()
+		filePath = highScoreDirectory + "\\" + str(dims[0]) + "X" + str(dims[1]) + "m" + str(self.numberOfMines) + "highScore.npy"
 		return filePath
 	
 	def SelectRow(self):
