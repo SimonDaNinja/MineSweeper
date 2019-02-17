@@ -1,5 +1,10 @@
 # MineSweeper
 
+An implementation of the classic game Minesweeper!
+You can customize the grid dimensions and number of mines.
+Tiles are revealed by typing in row and column numbers (as prompted -
+it's quite self-explanatory when playing.)
+
 This program uses windows system functions to:
 1. clear the screen.
 2. check for existence of directories and paths.
