@@ -1,5 +1,4 @@
 import random
-import os
 import copy
 
 fullBlock = chr(9608)*2
