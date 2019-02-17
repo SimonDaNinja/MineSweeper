@@ -36,6 +36,7 @@ class MainClass:
 			clear()
 			environment.DisplayUserMap()
 			while alive and (environment.GetEmptyCellsLeft()>0 or not environment.mapGenerated):
+				print("Number of uncleared empty tiles: " + str(environment.GetEmptyCellsLeft()))
 				x = self.SelectRow()
 				y = self.SelectColumn()
 				if not gameStarted:
