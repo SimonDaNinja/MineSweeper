@@ -32,21 +32,21 @@ class MainClass:
 			alive = True
 			gameStarted = False
 			
-			self.environment = Environment(self.height,self.width,self.numberOfMines)
+			environment = Environment(self.height,self.width,self.numberOfMines)
 			clear()
-			self.environment.DisplayUserMap()
-			while alive and (self.environment.GetScore()<self.environment.GetMaxScore() or not self.environment.mapGenerated):
+			environment.DisplayUserMap()
+			while alive and (environment.GetEmptyCellsLeft()>0 or not environment.mapGenerated):
 				x = self.SelectRow()
 				y = self.SelectColumn()
 				if not gameStarted:
 					sw.Clear()
 					sw.Start()
 					gameStarted = True
-				alive = self.environment.Click(x,y)
+				alive = environment.Click(x,y)
 				clear()
-				self.environment.DisplayUserMap()
+				environment.DisplayUserMap()
 			clear()
-			self.environment.DisplayFullMap()
+			environment.DisplayFullMap()
 			if alive:
 				print("You won!")
 				roundTime = sw.Stop()
@@ -97,7 +97,7 @@ class MainClass:
 			xString = input("Select row: ")
 			try:
 				x = int(xString)
-				if x > self.environment.GetHeight() or x<1:
+				if x > self.height or x<1:
 					print("out of bounds")
 				else:
 					break
@@ -110,7 +110,7 @@ class MainClass:
 			yString = input("Select column: ")
 			try:
 				y = int(yString)
-				if y > self.environment.GetWidth() or y<1:
+				if y > self.width or y<1:
 					print("out of bounds")
 				else:
 					break

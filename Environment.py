@@ -24,6 +24,9 @@ class Environment:
 		
 	def GetHeight(self):
 		return self.height
+		
+	def GetEmptyCellsLeft(self):
+		return self.maxScore - self.score
 	
 	def GetScore(self):
 		return self.score
