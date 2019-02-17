@@ -60,16 +60,17 @@ class Environment:
 		y = position[1]
 		if self.map[x][y]==self.mine:
 			return False
-		self.userMap[x][y] = True
-		self.score += 1
-		if self.map[x][y] == 0:
-			xValues, yValues = self.GetWindow(x,y)
-			for j in xValues:
-				for i in yValues:
-					if not self.userMap[j][i]:
-						newPosition = (j,i)
-						if not newPosition in activationQueue:
-							activationQueue.append(newPosition)
+		if not self.userMap[x][y]:
+			self.userMap[x][y] = True
+			self.score += 1
+			if self.map[x][y] == 0:
+				xValues, yValues = self.GetWindow(x,y)
+				for j in xValues:
+					for i in yValues:
+						if not self.userMap[j][i]:
+							newPosition = (j,i)
+							if not newPosition in activationQueue:
+								activationQueue.append(newPosition)
 		return True
 		
 	def GetWindow(self,x,y):
