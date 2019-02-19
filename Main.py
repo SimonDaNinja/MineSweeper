@@ -16,8 +16,7 @@ class MainClass:
 		sw = StopWatch()
 		clear()
 		self.PromptForCustomization()
-		playing = True
-		while playing:
+		while True:
 			alive = True
 			gameStarted = False
 			
@@ -50,7 +49,6 @@ class MainClass:
 				if playAgain == "y":
 					break
 				elif playAgain == "n":
-					playing = False
 					self.ShutDown()
 				else:
 					self.InvalidResponseMessage()
