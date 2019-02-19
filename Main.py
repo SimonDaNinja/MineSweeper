@@ -37,13 +37,11 @@ class MainClass:
 				environment.DisplayUserMap()
 			clear()
 			environment.DisplayFullMap()
+			roundTime = sw.Stop()
 			if alive:
-				print("You won!")
-				roundTime = sw.Stop()
-				print("Your time: " + str(roundTime) + " seconds")
-				self.CompareToHighScore(roundTime)
+				self.WinningEvent(roundTime)
 			else:
-				print("You lost!")
+				self.LosingEvent()
 			while True:
 				playAgain = (input("Do you want to play again? y/n ")).lower()
 				if playAgain == "y":
@@ -54,6 +52,14 @@ class MainClass:
 				else:
 					self.InvalidResponseMessage()
 		print("Good bye!")
+		
+	def WinningEvent(self,roundTime):
+		print("You won!")
+		print("Your time: " + str(roundTime) + " seconds")
+		self.CompareToHighScore(roundTime)
+				
+	def LosingEvent(self):
+		print("You lost!")
 	
 	def PromptForCustomization(self):
 		while True:
