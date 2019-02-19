@@ -122,6 +122,11 @@ class MainClass:
 			
 			
 	def CustomizeParameters(self):
+		self.CustomizeHeight()
+		self.CustomizeWidth()
+		self.CustomizeNumberOfMines()
+				
+	def CustomizeHeight(self):
 		while True:
 			heightString = input("Enter height: ")
 			try:
@@ -132,6 +137,8 @@ class MainClass:
 					break
 			except:
 				print("Invalid input!")
+	
+	def CustomizeWidth(self):
 		while True:
 			widthString = input("Enter width: ")
 			try:
@@ -142,6 +149,8 @@ class MainClass:
 					break
 			except:
 				self.InvalidResponseMessage()
+	
+	def CustomizeNumberOfMines(self):
 		while True:
 			numberOfMinesString = input("Enter number of mines: ")
 			try:
