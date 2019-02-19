@@ -42,16 +42,23 @@ class MainClass:
 				self.WinningEvent(roundTime)
 			else:
 				self.LosingEvent()
-			while True:
+			self.AskIfPlayAgain()
+		
+	def AskIfPlayAgain(self):
+		while True:
 				playAgain = (input("Do you want to play again? y/n ")).lower()
 				if playAgain == "y":
 					break
 				elif playAgain == "n":
 					playing = False
-					break
+					self.ShutDown()
 				else:
 					self.InvalidResponseMessage()
+	
+	def ShutDown(self):
 		print("Good bye!")
+		exit()
+		
 		
 	def WinningEvent(self,roundTime):
 		print("You won!")
