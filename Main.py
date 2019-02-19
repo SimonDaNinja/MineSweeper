@@ -10,23 +10,12 @@ def clear():
 
 class MainClass:
 	def __init__(self):
-		clear()
-		while True:
-			customization = (input("Do you want to customize the map? y/n ")).lower()
-			if customization == "y":
-				self.useCustomParameters = True
-				self.CustomizeParameters()
-				break
-			elif customization == "n":
-				self.useCustomParameters = False
-				self.SetParametersToDefault()
-				break
-			else:
-				self.InvalidResponseMessage()
 		self.Run()
 		
 	def Run(self):
 		sw = StopWatch()
+		clear()
+		self.PromptForCustomization()
 		playing = True
 		while playing:
 			alive = True
@@ -65,6 +54,18 @@ class MainClass:
 				else:
 					self.InvalidResponseMessage()
 		print("Good bye!")
+	
+	def PromptForCustomization(self):
+		while True:
+			customization = (input("Do you want to customize the map? y/n ")).lower()
+			if customization == "y":
+				self.CustomizeParameters()
+				break
+			elif customization == "n":
+				self.SetParametersToDefault()
+				break
+			else:
+				self.InvalidResponseMessage()
 	
 	def InvalidResponseMessage(self):
 		print("Invalid response!")
